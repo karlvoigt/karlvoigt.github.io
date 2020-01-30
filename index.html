@@ -12,18 +12,27 @@
 
     <body style='margin : 0px; overflow: hidden;'>
         <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
-        <a-scene embedded vr-mode-ui="enabled: false" arjs='sourceType: webcam; debugUIEnabled: true; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+        <a-scene embedded vr-mode-ui="enabled: false" arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
 
         <a-assets>
-            <a-asset-item id="animated-asset" src="https://github.com/karlvoigt/karlvoigt.github.io/blob/master/models/Rose.gltf"></a-asset-item>
+          <!-- <a-asset-item id="tree-obj" src="/Users/karlvoigt/Downloads/dried-rose-rawscan/source/rosa/rosa/rosa.obj"></a-asset-item>
+          <a-asset-item id="tree-mtl" src="/Users/karlvoigt/Downloads/dried-rose-rawscan/source/rosa/rosa/rosa.obj.mtl"></a-asset-item> -->
+            <a-asset-item id="animated-asset" src="https://raw.githubusercontent.com/prashant-andani/3d-models/master/flower/scene.gltf"></a-asset-item>
+        <a-asset-item id="smiley" src="https://cdn.rawgit.com/KhronosGroup/glTF-Sample-Models/9176d098/1.0/SmilingFace/glTF/SmilingFace.gltf"></a-asset-item>
         </a-assets>
 
+
+
         <a-marker markerhandler emitevents="true" cursor="rayOrigin: mouse" id="animated-marker" type='barcode' value='6'>
-            <a-entity
+            <!-- <a-entity
                 id="animated-model"
                 gltf-model="#animated-asset"
-                scale="2">
+                scale="1">
             </a-entity>
+            <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity> -->
+
+          <a-entity gltf-model="#smiley" rotation= "180 0 0">
+          </a-entity>
         </a-marker>
 
         <a-entity camera></a-entity>
