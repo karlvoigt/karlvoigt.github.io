@@ -21,15 +21,9 @@
       arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;"
     >
       <a-assets>
-        <!-- <a-asset-item id="tree-obj" src="/Users/karlvoigt/Downloads/dried-rose-rawscan/source/rosa/rosa/rosa.obj"></a-asset-item>
-          <a-asset-item id="tree-mtl" src="/Users/karlvoigt/Downloads/dried-rose-rawscan/source/rosa/rosa/rosa.obj.mtl"></a-asset-item> -->
-        <a-asset-item
+      <a-asset-item
           id="animated-asset"
-          src="https://cdn.glitch.com/6490a87a-f3d7-45fa-a563-b63bfa2ee7c9%2FRose.gltf?v=1580483883185"
-        ></a-asset-item>
-        <a-asset-item
-          id="smiley"
-          src="https://cdn.rawgit.com/KhronosGroup/glTF-Sample-Models/9176d098/1.0/SmilingFace/glTF/SmilingFace.gltf"
+          src="https://raw.githubusercontent.com/karlvoigt/karlvoigt.github.io/master/models/model.gltf"
         ></a-asset-item>
 
       </a-assets>
@@ -42,16 +36,15 @@
         type="barcode"
         value="7"
       >
-        <!-- <a-entity
+        <a-entity
                 id="animated-model"
                 gltf-model="#animated-asset"
                 scale="1">
             </a-entity>
-            <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity> -->
-        <a-obj-model
+        <!-- <a-obj-model
           src="https://github.com/karlvoigt/karlvoigt.github.io/raw/master/models/rosa.obj";
          mtl="https://raw.githubusercontent.com/karlvoigt/karlvoigt.github.io/master/models/rosa.obj.mtl">
-       </a-obj-model>
+       </a-obj-model> -->
     </a-marker>
 
       <a-marker type="barcode" value="6">
