@@ -18,11 +18,11 @@
     <a-scene
       embedded
       vr-mode-ui="enabled: false"
-      arjs="sourceType: webcam; sourceWidth:1920; sourceHeight:1080; displayWidth: 1920; displayHeight: 1080; debugUIEnabled: true; markersAreaEnabled: true; detectionMode: mono_and_matrix; matrixCodeType: 3x3;"
+      arjs="sourceType: webcam; sourceWidth:1920; sourceHeight:1080; displayWidth: 1920; displayHeight: 1080; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;"
     >
       <a-assets>
       <a-asset-item
-          id="animated-asset"
+          id="roses"
           src="https://raw.githubusercontent.com/karlvoigt/karlvoigt.github.io/master/models/model.gltf"
         ></a-asset-item>
 
@@ -37,8 +37,8 @@
         value="7"
       >
         <a-entity
-                id="animated-model"
-                gltf-model="#animated-asset"
+                id="roses"
+                gltf-model="#roses"
                 scale="1">
             </a-entity>
         <!-- <a-obj-model
@@ -46,6 +46,15 @@
          mtl="https://raw.githubusercontent.com/karlvoigt/karlvoigt.github.io/master/models/rosa.obj.mtl">
        </a-obj-model> -->
     </a-marker>
+
+    <a-marker preset='hiro'>
+      <a-entity
+          id="roses"
+          gltf-model="#roses"
+          scale="1">
+      </a-entity>
+    </a-marker>
+
 
       <a-marker type="barcode" value="6">
         <a-box
