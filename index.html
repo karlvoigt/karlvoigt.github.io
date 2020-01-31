@@ -34,7 +34,14 @@
 
       </a-assets>
 
-      <a-marker type="barcode" value="7">
+      <a-marker
+        markerhandler
+        emitevents="true"
+        cursor="rayOrigin: mouse"
+        id="animated-marker"
+        type="barcode"
+        value="7"
+      >
         <!-- <a-entity
                 id="animated-model"
                 gltf-model="#animated-asset"
@@ -42,8 +49,8 @@
             </a-entity>
             <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity> -->
         <a-obj-model
-          src=[/models/](rosa.obj);
-         mtl=[/models/](rosa.obj.mtl)>
+          src="https://github.com/karlvoigt/karlvoigt.github.io/raw/master/models/rosa.obj";
+         mtl="https://github.com/karlvoigt/karlvoigt.github.io/raw/master/models/rosa.obj.mtl">
        </a-obj-model>
     </a-marker>
 
