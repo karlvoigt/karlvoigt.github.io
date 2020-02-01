@@ -23,12 +23,12 @@
       <a-assets>
       <a-asset-item
           id="roses"
-          src="models/Mx-afskeid.glb"
+          src="models/model.gltf"
         ></a-asset-item>
 
         <a-asset-item
             id="text"
-            src="models/model.gltf"
+            src="models/Mx-afskeid.glb"
           ></a-asset-item>
       </a-assets>
 
@@ -62,7 +62,7 @@
     <a-marker type="pattern" preset="custom" url="https://raw.githubusercontent.com/karlvoigt/karlvoigt.github.io/master/markers/pattern-RoosMarker.patt">
       <a-entity
           id="roses"
-          gltf-model="#roses"
+          gltf-model="#text"
           scale="1"
           rotation='0 0 0'
           position='0 1 0'>
@@ -72,7 +72,7 @@
     <a-marker type="pattern" preset="custom" url="https://raw.githubusercontent.com/karlvoigt/karlvoigt.github.io/master/markers/%3F-marker.patt">
       <a-entity
           id="text"
-          gltf-model="#text"
+          gltf-model="#roses"
           scale="1"
           rotation='0 0 0'
           position='0 1 0'>
