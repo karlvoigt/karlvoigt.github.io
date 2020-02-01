@@ -28,7 +28,9 @@
 
         <a-asset-item
             id="text"
-            src="https://cdn.glitch.com/ded13030-6d6a-4894-9011-7b2a02896326%2FMx-afskeid.glb?v=1580540907619"
+            gltf-model="https://cdn.glitch.com/ded13030-6d6a-4894-9011-7b2a02896326%2FMx-afskeid.glb?v=1580540907619"
+            scale="0.1 0.1 0.1"
+
           ></a-asset-item>
       </a-assets>
 
@@ -58,7 +60,7 @@
     <a-marker type="pattern" preset="custom" url="https://raw.githubusercontent.com/karlvoigt/karlvoigt.github.io/master/markers/pattern-RoosMarker.patt">
       <a-entity
           id="roses"
-          gltf-model="#text"
+          gltf-model="#roses"
           scale="1"
           rotation='0 0 0'
           position='0 1 0'>
@@ -68,7 +70,7 @@
     <a-marker type="pattern" preset="custom" url="https://raw.githubusercontent.com/karlvoigt/karlvoigt.github.io/master/markers/%3F-marker.patt">
       <a-entity
           id="text"
-          gltf-model="#roses"
+          gltf-model="#text"
           scale="1"
           rotation='0 0 0'
           position='0 1 0'>
