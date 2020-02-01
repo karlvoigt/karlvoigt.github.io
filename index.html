@@ -31,24 +31,31 @@
     </style>
   </head>
   <body>
-    <div class="note" style="position: absolute;
-                     top: 1%;
-                     left: 1%;
-                     color: black;
-                     text-shadow:
-                     -1px -1px 0 #BBB,
-                     1px -1px 0 #BBB,
-                     -1px 1px 0 #BBB,
-                     1px 1px 0 #BBB;">
-      You'll need to have <a href="https://jeromeetienne.github.io/AR.js/data/images/HIRO.jpg">this image</a> printed or just displaying on your phone!
-    </div>
-    <a-scene artoolkit="sourceType: webcam;" embedded="embedded">
+    <a-scene artoolkit="sourceType: webcam;" embedded="embedded" debugUIEnabled="false">
 
-        <a-marker preset="hiro">
+      <a-assets>
+       <a-asset-item
+         id="roses"
+         src="models/model.gltf"
+       ></a-asset-item>
+     </a-assets>
+
+        <a-marker type="pattern" preset="custom" url="https://raw.githubusercontent.com/karlvoigt/karlvoigt.github.io/master/markers/%3F-marker.patt">
             <a-box material="opacity: 0.1"></a-box>
             <a-entity gltf-model="https://cdn.glitch.com/ded13030-6d6a-4894-9011-7b2a02896326%2FMx-afskeid.glb?v=1580540907619" scale="-0.1 -0.1 -0.1"></a-entity>
 
         </a-marker>
+
+          <a-marker type="pattern" preset="custom" url="https://raw.githubusercontent.com/karlvoigt/karlvoigt.github.io/master/markers/pattern-RoosMarker.patt">
+            <a-entity
+              id="roses"
+              gltf-model="#roses"
+              scale="1"
+              rotation='0 0 0'
+              position='0 1 0'>
+            </a-entity>
+          </a-marker>
+
         <a-camera-static/>
     </a-scene>
 
