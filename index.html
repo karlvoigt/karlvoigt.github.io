@@ -6,9 +6,13 @@
       content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
   </head>
-  <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+  <!-- <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
   <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
-  <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+  <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script> -->
+  <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <!--     Save commit version of aframe-arjs before the rewrite around August 8, 2017 -->
+  <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
+  <script>THREEx.ArToolkitContext.baseURL = 'https://rawgit.com/jeromeetienne/ar.js/master/three.js/'</script>
 
   <!-- import events.js script -->
   <script src="https://raw.githack.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/events.js"></script>
