@@ -2,7 +2,7 @@
  <!DOCTYPE html>
 <html>
   <head>
-    <title>Pizza test hoho</title>
+    <title>Click me</title>
     <meta name="description" content="Let's hope this work!">
     <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
     <meta charset="utf-8">
@@ -13,22 +13,6 @@
     <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
     <script>THREEx.ArToolkitContext.baseURL = 'https://rawgit.com/jeromeetienne/ar.js/master/three.js/'</script>
     <script src="./js/index.js"></script>
-    <style>
-      .note {
-        position: absolute;
-                     top: 1%;
-                     left: 1%;
-                     color: black;
-                     text-shadow:
-                     -1px -1px 0 #BBB,
-                     1px -1px 0 #BBB,
-                     -1px 1px 0 #BBB,
-                     1px 1px 0 #BBB;
-      }
-      a-scene {
-        pointer-events: none;
-      }
-    </style>
   </head>
   <body>
     <a-scene artoolkit="sourceType: webcam;" embedded="embedded" vr-mode-ui="enabled: false"
@@ -42,8 +26,7 @@
      </a-assets>
 
         <a-marker type="pattern" preset="custom" url="https://raw.githubusercontent.com/karlvoigt/karlvoigt.github.io/master/markers/%3F-marker.patt">
-            <a-box material="opacity: 0.1"></a-box>
-            <a-entity gltf-model="https://cdn.glitch.com/ded13030-6d6a-4894-9011-7b2a02896326%2FMx-afskeid.glb?v=1580540907619" scale="-0.1 -0.1 -0.1"></a-entity>
+            <a-entity gltf-model="https://cdn.glitch.com/ded13030-6d6a-4894-9011-7b2a02896326%2FMx-afskeid.glb?v=1580540907619" scale="0.01 0.01 0.01"></a-entity>
 
         </a-marker>
 
