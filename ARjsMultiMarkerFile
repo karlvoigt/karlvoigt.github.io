@@ -1,16 +1,16 @@
 {
-	"meta": {
-		"createdBy": "Area Learning - AR.js 2.1.8",
-		"createdAt": "2020-02-04T15:48:06.279Z"
+	\"meta\": {
+		\"createdBy\": \"Area Learning - AR.js 2.1.8\",
+		\"createdAt\": \"2020-02-04T18:26:37.889Z\"
 	},
-	"trackingBackend": "artoolkit",
-	"subMarkersControls": [
+	\"trackingBackend\": \"artoolkit\",
+	\"subMarkersControls\": [
 		{
-			"parameters": {
-				"type": "pattern",
-				"patternUrl": "https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/pattern-files/pattern-letterA.patt"
+			\"parameters\": {
+				\"type\": \"pattern\",
+				\"patternUrl\": \"https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/pattern-files/pattern-hiro.patt\"
 			},
-			"poseMatrix": [
+			\"poseMatrix\": [
 				1,
 				0,
 				0,
@@ -30,122 +30,26 @@
 			]
 		},
 		{
-			"parameters": {
-				"type": "pattern",
-				"patternUrl": "https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/pattern-files/pattern-letterB.patt"
+			\"parameters\": {
+				\"type\": \"pattern\",
+				\"patternUrl\": \"https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/pattern-files/pattern-kanji.patt\"
 			},
-			"poseMatrix": [
-				0.999728285203328,
-				0.021661492427763208,
-				0.008580178025031169,
+			\"poseMatrix\": [
+				0.9965641470059897,
+				0.08249872264035163,
+				0.007332927016291251,
 				0,
-				-0.02251094239862923,
-				0.9929978186999481,
-				0.11596696334550685,
+				-0.08280847657999749,
+				0.9941774603986091,
+				0.06894889919559483,
 				0,
-				-0.006008079896222958,
-				-0.11612861862989673,
-				0.9932159915916652,
+				-0.0016020344263021871,
+				-0.06931922734655681,
+				0.9975933266811002,
 				0,
-				4.0230033507703595,
-				-0.1891710316337429,
-				-0.08278529261920631,
-				0.9999999999999998
-			]
-		},
-		{
-			"parameters": {
-				"type": "pattern",
-				"patternUrl": "https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/pattern-files/pattern-letterC.patt"
-			},
-			"poseMatrix": [
-				0.9968200152658218,
-				-0.07894100416561857,
-				-0.010850278525331589,
-				0,
-				0.07914354395489373,
-				0.9966681642627293,
-				0.019713762174125127,
-				0,
-				0.009257900310847465,
-				-0.02050980059451091,
-				0.9997469719208945,
-				0,
-				0.024686673997797972,
-				-0.781876134445362,
-				6.239129264781033,
-				1
-			]
-		},
-		{
-			"parameters": {
-				"type": "pattern",
-				"patternUrl": "https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/pattern-files/pattern-letterD.patt"
-			},
-			"poseMatrix": [
-				0.9866807675204605,
-				0.16252025076339005,
-				-0.006946741783725354,
-				0,
-				-0.1571893952156983,
-				0.9635665524804741,
-				0.216404977436971,
-				0,
-				0.04186383364202745,
-				-0.21243066753997358,
-				0.9762790572262923,
-				0,
-				4.0784273469208685,
-				-0.8731319471906474,
-				6.226913383081743,
-				1
-			]
-		},
-		{
-			"parameters": {
-				"type": "pattern",
-				"patternUrl": "https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/pattern-files/pattern-letterG.patt"
-			},
-			"poseMatrix": [
-				0.9988515402723163,
-				0.04768950748051643,
-				0.004572589911428623,
-				0,
-				-0.04781198200798136,
-				0.9862477679083688,
-				0.15820608916606432,
-				0,
-				0.003035062917676415,
-				-0.15824300191541965,
-				0.987395745651008,
-				0,
-				2.5233675133937687,
-				-5.266105149439005,
-				2.237470842394516,
-				0.9999999999999998
-			]
-		},
-		{
-			"parameters": {
-				"type": "pattern",
-				"patternUrl": "https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/pattern-files/pattern-letterF.patt"
-			},
-			"poseMatrix": [
-				0.9677836663508985,
-				0.22053274835418882,
-				0.12148943527393935,
-				0,
-				-0.24099820377355166,
-				0.6716583521062262,
-				0.7005676115437317,
-				0,
-				0.07289868610712906,
-				-0.7072766067386024,
-				0.7031682962889572,
-				0,
-				2.775671021521262,
-				-7.024869387715161,
-				-2.092285006620403,
+				-0.41827611456573144,
+				-0.5168420923068375,
+				-1.2237442305909454,
 				1
 			]
 		}
