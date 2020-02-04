@@ -1,16 +1,16 @@
 {
-	\"meta\": {
-		\"createdBy\": \"Area Learning - AR.js 2.1.8\",
-		\"createdAt\": \"2020-02-04T18:26:37.889Z\"
+	"meta": {
+		"createdBy": "Area Learning - AR.js 2.1.8",
+		"createdAt": "2020-02-04T19:11:34.993Z"
 	},
-	\"trackingBackend\": \"artoolkit\",
-	\"subMarkersControls\": [
+	"trackingBackend": "artoolkit",
+	"subMarkersControls": [
 		{
-			\"parameters\": {
-				\"type\": \"pattern\",
-				\"patternUrl\": \"https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/pattern-files/pattern-hiro.patt\"
+			"parameters": {
+				"type": "pattern",
+				"patternUrl": "https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/pattern-files/pattern-hiro.patt"
 			},
-			\"poseMatrix\": [
+			"poseMatrix": [
 				1,
 				0,
 				0,
@@ -30,26 +30,26 @@
 			]
 		},
 		{
-			\"parameters\": {
-				\"type\": \"pattern\",
-				\"patternUrl\": \"https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/pattern-files/pattern-kanji.patt\"
+			"parameters": {
+				"type": "pattern",
+				"patternUrl": "https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/pattern-files/pattern-kanji.patt"
 			},
-			\"poseMatrix\": [
-				0.9965641470059897,
-				0.08249872264035163,
-				0.007332927016291251,
+			"poseMatrix": [
+				0.9971322825940768,
+				0.07440921739732385,
+				-0.013786824274503775,
 				0,
-				-0.08280847657999749,
-				0.9941774603986091,
-				0.06894889919559483,
+				-0.07532146909563156,
+				0.9582503313587399,
+				-0.2758313555043079,
 				0,
-				-0.0016020344263021871,
-				-0.06931922734655681,
-				0.9975933266811002,
+				-0.007313164923017364,
+				0.27607883746225925,
+				0.9611071861024718,
 				0,
-				-0.41827611456573144,
-				-0.5168420923068375,
-				-1.2237442305909454,
+				-0.31205962009402577,
+				-0.6414758382551113,
+				-1.0457875925391868,
 				1
 			]
 		}
