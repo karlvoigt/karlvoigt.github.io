@@ -25,7 +25,7 @@
 
 
   <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
-  <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
+  <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.2/aframe/build/aframe-ar.js"></script>
   <script>
     THREEx.ArToolkitContext.baseURL = 'https://rawgit.com/jeromeetienne/ar.js/master/three.js/'
   </script>
@@ -36,11 +36,11 @@
 
 <body style="margin : 0px; overflow: hidden;">
   <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
-  <a-scene embedded vr-mode-ui="enabled: false" arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3; trackingMethod: best;">
+  <a-scene embedded vr-mode-ui="enabled: false" arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
     <a-assets>
       <a-asset-item id="roses" src="models/model.gltf"></a-asset-item>
 
-      <a-asset-item id="text" gltf-model="https://cdn.glitch.com/ded13030-6d6a-4894-9011-7b2a02896326%2FMx-afskeid.glb?v=1580540907619"></a-asset-item>
+      <a-asset-item id="text" gltf-model="https://cdn.glitch.com/ded13030-6d6a-4894-9011-7b2a02896326%2FMx-afskeid.glb?v=1580540907619" scale="0.1 0.1 0.1"></a-asset-item>
     </a-assets>
 
     <a-marker type="pattern" preset="custom" url="https://raw.githubusercontent.com/karlvoigt/karlvoigt.github.io/master/markers/pattern-RoosMarker.patt">
@@ -49,9 +49,7 @@
     </a-marker>
 
     <a-marker type="area">
-      <a-entity id="roses" gltf-model="#roses" scale="2 2 2" rotation='0 0 0' position="2.5 0 1.5">
-      </a-entity>
-      <a-entity id="text" gltf-model="#text" scale="0.5 0.5 0.5" rotation='-30 0 0' position="2.5 0 1.5">
+      <a-entity id="roses" gltf-model="#roses" scale="2 2 2" rotation='0 0 0' position="2.4342159276022715 -0.4749316927031705 1.355608183113371">
       </a-entity>
     </a-marker>
 
