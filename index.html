@@ -36,7 +36,7 @@
 
 <body style="margin : 0px; overflow: hidden;">
   <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
-  <a-scene embedded vr-mode-ui="enabled: false" arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
+  <a-scene embedded vr-mode-ui="enabled: false" arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3; trackingMethod: best;">
     <a-assets>
       <a-asset-item id="roses" src="models/model.gltf"></a-asset-item>
 
