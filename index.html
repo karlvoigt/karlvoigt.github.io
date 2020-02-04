@@ -4,6 +4,23 @@
 
 <head>
   <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+  <script>   //Loads multimarker file to localstorage otherwise the area preset will only look for hiro alone
+  var a = window.location.toString();
+  var file = a.substring(a.indexOf("?") + 1);
+      var xobj = new XMLHttpRequest();
+            xobj.overrideMimeType("application/json");
+            if(file==a){
+              xobj.open('GET', 'ARjsMultiMarkerFile', true); //
+            }
+            else{
+              xobj.open('GET', file, true); //
+            }
+          xobj.onreadystatechange = function () {
+      if (xobj.readyState == 4 && xobj.status == "200") {
+        localStorage.setItem('ARjsMultiMarkerFile',xobj.responseText);
+        }};
+        xobj.send();
+            </script>
 </head>
 <!-- <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
   <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
