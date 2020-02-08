@@ -25,18 +25,23 @@
 
   <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
   <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+  <script src="https://rvdleun.github.io/aframe-arcube/dist/aframe-arcube.min.js"></script>
+  <script>
+    THREEx.ArToolkitContext.baseURL = 'https://rawgit.com/jeromeetienne/ar.js/master/three.js/'
+  </script>
 </head>
 
 <body style="margin : 0px; overflow: hidden">
   <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
   <a-scene embedded vr-mode-ui="enabled: false" arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
+
     <a-assets>
       <a-asset-item id="roses" src="models/model.gltf"></a-asset-item>
       <a-asset-item id="text" gltf-model="https://cdn.glitch.com/ded13030-6d6a-4894-9011-7b2a02896326%2FMx-afskeid.glb?v=1580540907619" scale="0.1 0.1 0.1"></a-asset-item>
     </a-assets>
 
     <a-marker type="pattern" preset="custom" url="https://raw.githubusercontent.com/karlvoigt/karlvoigt.github.io/master/markers/pattern-RoosMarker.patt">
-      <a-entity id="roses" gltf-model="#roses" scale="1" rotation='0 0 0' position='0 0 0'>
+      <a-entity id="roses" gltf-model="#roses" scale="1.5 1.5 1.5" rotation='0 0 0' position='0 1 0'>
       </a-entity>
     </a-marker>
 
@@ -46,6 +51,7 @@
         position="0 0 -0.5"
         rotation="-60 1 20">
       </a-entity>
+
       <a-entity gltf-model="models/Mx-afskeid.glb"
         scale="0.02 0.02 0.02"
         position='0 0.5 0.5'
@@ -53,6 +59,10 @@
       </a-entity>
     </a-marker>
 
+    <a-arcube timeout="0">
+
+      <a-box scale="1.1 1.1 1.1"> </a-box>
+    </a-arcube>
 
     <a-entity camera></a-entity>
   </a-scene>
