@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+
+  <!--script src="../vendor/aframe.min.js"></script-->
+  <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+  <script src="../vendor/aframe-ar.js"> </script>
+  <!--script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script-->
+  <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+  <!--script>
+    THREEx.ArToolkitContext.baseURL = 'https://rawgit.com/jeromeetienne/ar.js/master/three.js/'
+  </script-->
+
+</head>
+
+<body style="margin : 0px; overflow: hidden">
+  <script>
+    AFRAME.registerComponent('markerhandler', {
+
+      init: function() {
+        function onResize() {
+           arToolkitSource.onResizeElement()
+           arToolkitSource.copyElementSizeTo(renderer.domElement)
+           setTimeout(function(){
+               arToolkitSource.onResizeElement()
+               arToolkitSource.copyElementSizeTo(renderer.domElement)
+           }, 500);
+       }
+
+        console.log("Happy B-day");
+        var CurPage=0;
+        var Started=false;
+        var CardMarkerVisible=false;
+        var Reverse=false;
+        var RecentlyClicked=false;
+
+        const CardMarker = document.querySelector('#CardMarker');
+        const CardArea = document.querySelector('#CardArea');
+        const Page1 = document.querySelector('#Page1');
+        const NxtBtn = document.querySelector('#NextBtn')
+        const NxtPlane = document.querySelector('#NextPlane')
+        const BackPlane = document.querySelector('#BackPlane')
+        var Pages = CardArea.querySelectorAll("a-entity[id = 'Page']");
+        console.log("pages" + Pages);
+
+        CardMarker.addEventListener('click', function(ev, target){
+           const intersectedElement = ev && ev.detail && ev.detail.intersectedEl;
+           console.log(intersectedElement);
+           console.log(RecentlyClicked);
+           if (((NxtPlane && intersectedElement === NxtPlane) || (NxtBtn && intersectedElement === NxtBtn)) && (!RecentlyClicked)) {
+
+             RecentlyClicked=true;
+             setTimeout(function() {
+               RecentlyClicked=false;
+             },1000)
+
+             console.log("Current Page: " + CurPage);
+             if (CurPage<=Pages.length-1) {
+               if (CurPage==0) {
+                 CardArea.emit("Scooch")
+               }
+
+               Pages.item(CurPage).emit("Flip")
+               if (CurPage<Pages.length-1) {
+                 Pages.item(CurPage+1).setAttribute("position","0 0 0.03")
+               }
+               console.log("Flipped");
+               CurPage += 1;
+               console.log("Now on Page " + CurPage);
+             }
+           } else if (((BackPlane && intersectedElement === BackPlane) || (BackBtn && intersectedElement === BackBtn)) && (!RecentlyClicked)) {
+
+             RecentlyClicked=true;
+             setTimeout(function() {
+               RecentlyClicked=false;
+             },1000)
+
+             if (CurPage>=1) {
+               console.log("Current Page: " + CurPage);
+               CurPage -= 1;
+
+               if (CurPage==0) {
+                   CardArea.emit("ScoochBack")
+               }
+
+               Pages.item(CurPage).emit("FlipBack")
+               Pages.item(CurPage).setAttribute("position","0 0 0.03")
+               if (CurPage<Pages.length-1) {
+                 Pages.item(CurPage+1).setAttribute("position","0 0 0")
+               }
+               console.log("Flipped Back");
+               console.log("Now on Page " + CurPage);
+             }
+           }
+       });
+      }
+    });
+  </script>
+  <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
+  <a-scene renderer="logarithmicDepthBuffer: true;" embedded vr-mode-ui="enabled: false"
+    arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
+
+    <a-assets>
+      <a-asset-item id="Vader" src="models/Vader.gltf"></a-asset-item>
+    </a-assets>
+
+    <a-marker id="CardMarker" type="barcode" value="1" markerhandler cursor="rayOrigin: mouse" emitevents="true">
+
+      <a-entity id="NextPlane" rotation="90 0 0" scale="0.8 0.6 0.05" position="-1 0 -1" geometry="primitive: plane; height: 1; width: 1" material="side: double; transparent: true; opacity:0.1">
+      </a-entity>
+      <a-box id="NextBtn" scale="0.35 0.05 0.2" position="-0.5 0 -1" color="rgb(120, 117, 117)"></a-box>
+
+      <a-entity id="BackPlane" rotation="90 0 0" scale="0.8 0.6 0.05" position="1 0 -1" geometry="primitive: plane; height: 1; width: 1" material="side: double; transparent: true; opacity:0.1">
+        <!--a-box id="NextBtn" scale="3 3 3" colour="rgb(185, 185, 185)"></a-box-->
+      </a-entity>
+      <a-box id="BackBtn" scale="0.35 0.05 0.2" position="0.5 0 -1" color="rgb(120, 117, 117)"></a-box>
+
+      <a-entity id="CardArea" rotation="-90 180 0" position="0.5 0 0" scale="0.35 0.35 0.35"
+      animation__Scooch="property: position;from: 0.5 0 0; to: 0 0 0; delay: 000; dir: alternate; startEvents: Scooch;"
+      animation__ScoochBack="property: position;from: 0.5 0 0; to: 0 0 0; delay: 000; dir: alternate; startEvents: ScoochBack;dir: reverse">
+
+      <!Page1>
+        <a-entity id="Page" position="0 0 0.03" geometry="primitive: plane; height: 4; width: 6" material="side: double; transparent: true; opacity:0"
+        animation__Flip="property: rotation;from: 0 0 0; to: 0 -170 0; delay: 000; startEvents: Flip;"
+        animation__FlipPos="property: position; to: 0 0 0; delay: 000; startEvents: Flip;"
+        animation__FlipBack="property: rotation;from: 0 0 0; to: 0 -170 0; delay: 000; startEvents: FlipBack; dir: reverse;">
+          <a-entity position="1.5 0 0" rotation="0 0 0">
+            <!Content op die voorkant>
+              <a-entity id="Vader" gltf-model="#Vader" shader="flat" scale="0.27 0.27 0.27" position="0 0.45 0.1" rotation="90 0 0"></a-entity>
+              <a-entity id="Birthday" gltf-model="models/BIRTHDAYCARD.glb" shader="flat" scale="0.0255 0.03 0.0255" position="0 -1.65 0.05" rotation="90 0 0"></a-entity>
+              <a-entity id="I_Am" gltf-model="models/I_AM.glb" shader="flat" scale="0.0255 0.03 0.0255" position="0 -1.05 0.05" rotation="90 0 0"></a-entity>
+
+              <!Basiese boublokke van bladsy>
+                <a-entity id="Frontside" position="0 0 0.031" geometry="primitive: plane; height: 4; width: 3" material="color:rgb(73, 182, 244)"></a-entity>
+                <a-box id="PageThickness" color="white" ; scale="3 4 0.03" rotation="0 0 0"> </a-box>
+                <a-entity id="Backside" rotation="0 180 0" position="0 0 -0.031" geometry="primitive: plane; height: 4; width: 3" material=" color:white;src:Pages/BenB-day.png"></a-entity>
+          </a-entity>
+        </a-entity>
+
+        <!Page 2>
+          <a-entity id="Page" position="0 0 0" geometry="primitive: plane; height: 4; width: 6" material="side: double; transparent: true; opacity: 0"
+          animation__Flip="property: rotation;from: 0 0 0; to: 0 -169 0; delay: 000; startEvents: Flip;"
+          animation__FlipPos="property: position; to: 0 0 0; delay: 000; startEvents: Flip;"
+          animation__FlipBack="property: rotation;from: 0 0 0; to: 0 -169 0; delay: 000; startEvents: FlipBack; dir: reverse;">>
+            <a-entity position="1.5 0 0" rotation="0 0 0">
+              <a-entity id="Frontside" position="0 0 0.031" geometry="primitive: plane; height: 4; width: 3" material="color:white"></a-entity>
+              <a-box id="PageThickness" color="white" ; scale="3 4 0.03" rotation="0 0 0"> </a-box>
+              <a-entity id="Backside" rotation="0 180 0" position="0 0 -0.031" geometry="primitive: plane; height: 4; width: 3" material=" color:white;"></a-entity>
+            </a-entity>
+          </a-entity>
+
+      </a-entity>
+    </a-marker>
+
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
+
+</html>
