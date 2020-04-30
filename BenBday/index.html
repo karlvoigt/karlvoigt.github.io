@@ -36,6 +36,9 @@
         var Started=false;
         var CardMarkerVisible=false;
         var Reverse=false;
+        var IsLandscape=false;
+        var LSScnt=1;
+        var PSScnt=1;
 
         const CardMarker = document.querySelector('#CardMarker');
         const CardArea = document.querySelector('#CardArea');
@@ -43,8 +46,33 @@
         const NxtBtn = document.querySelector('#NextBtn')
         const NxtPlane = document.querySelector('#NextPlane')
         const BackPlane = document.querySelector('#BackPlane')
+        const ButtonsArea = document.querySelector('#Buttons')
+        const LandscapeSS= document.querySelector('#LandscapeSlideShow')
+        const PortraitSS= document.querySelector('#PortraitSlideShow')
         var Pages = CardArea.querySelectorAll("a-entity[id = 'Page']");
         console.log("pages" + Pages);
+
+        setInterval(function(){
+          if (CurPage==3) {
+            if (LSScnt<16) {
+              LSScnt+=1;
+            } else {
+              LSScnt=1;
+            }
+            LandscapeSS.setAttribute("material","src:#LandscapeSS" + LSScnt)
+          }
+      }, 2000);
+
+      setInterval(function(){
+        if (CurPage==2) {
+          if (PSScnt<14) {
+            PSScnt+=1;
+          } else {
+            PSScnt=1;
+          }
+          PortraitSS.setAttribute("material","src:#PortraitSS" + PSScnt)
+        }
+    }, 2000);
 
         CardMarker.addEventListener('click', function(ev, target){
            const intersectedElement = ev && ev.detail && ev.detail.intersectedEl;
@@ -53,8 +81,20 @@
 
              console.log("Current Page: " + CurPage);
              if (CurPage<=Pages.length-1) {
+               if (IsLandscape) {
+                 CardArea.emit("Portrait")
+                 Pages.item(2).emit("GoPortrait")
+                 IsLandscape=false;
+                 console.log("Rotated");
+               }
+
                if (CurPage==0) {
                  CardArea.emit("Scooch")
+               } else if (CurPage==2) {
+                CardArea.emit("Landscape")
+                Pages.item(3).emit("GoLandscape")
+                IsLandscape=true;
+                console.log("Rotated");
                }
 
                Pages.item(CurPage).emit("Flip")
@@ -70,14 +110,25 @@
 
              if (CurPage>=1) {
                console.log("Current Page: " + CurPage);
+                if (IsLandscape) {
+                   CardArea.emit("Portrait")
+                   Pages.item(3).emit("GoPortrait")
+                   IsLandscape=false;
+                   console.log("Rotated");
+                }
+
                CurPage -= 1;
 
                if (CurPage==0) {
                    CardArea.emit("ScoochBack")
+               } else if (CurPage==3) {
+                CardArea.emit("Landscape")
+                IsLandscape=true;
+                console.log("Rotated");
                }
 
                Pages.item(CurPage).emit("FlipBack")
-               Pages.item(CurPage).setAttribute("position","0 0 0.03")
+               Pages.item(CurPage).setAttribute("position","0 0 0.033")
                if (CurPage<Pages.length-1) {
                  Pages.item(CurPage+1).setAttribute("position","0 0 0")
                }
@@ -97,30 +148,72 @@
       <a-asset-item id="Vader" src="models/Vader.gltf"></a-asset-item>
       <a-asset-item id="BirthdayModel" src="models/BIRTHDAYCARD.glb"></a-asset-item>
       <a-asset-item id="I_AmModel" src="models/I_AM.glb"></a-asset-item>
-      <img id="tekening" src="Pages/BenB-day.png"></img>
+
+      <img id="LandscapeSS1" src="Slideshow/Landscape1.JPG"></img>
+      <img id="LandscapeSS2" src="Slideshow/Landscape2.JPG"></img>
+      <img id="LandscapeSS3" src="Slideshow/Landscape3.JPG"></img>
+      <img id="LandscapeSS4" src="Slideshow/Landscape4.JPG"></img>
+      <img id="LandscapeSS5" src="Slideshow/Landscape5.JPG"></img>
+      <img id="LandscapeSS6" src="Slideshow/Landscape6.JPG"></img>
+      <img id="LandscapeSS7" src="Slideshow/Landscape7.JPG"></img>
+      <img id="LandscapeSS8" src="Slideshow/Landscape8.JPG"></img>
+      <img id="LandscapeSS9" src="Slideshow/Landscape9.JPG"></img>
+      <img id="LandscapeSS10" src="Slideshow/Landscape10.JPG"></img>
+      <img id="LandscapeSS11" src="Slideshow/Landscape11.JPG"></img>
+      <img id="LandscapeSS12" src="Slideshow/Landscape12.JPG"></img>
+      <img id="LandscapeSS13" src="Slideshow/Landscape13.JPG"></img>
+      <img id="LandscapeSS14" src="Slideshow/Landscape14.JPG"></img>
+      <img id="LandscapeSS15" src="Slideshow/Landscape15.JPG"></img>
+      <img id="LandscapeSS16" src="Slideshow/Landscape16.JPG"></img>
+
+      <img id="PortraitSS1" src="Slideshow/Portrait1.JPG"></img>
+      <img id="PortraitSS2" src="Slideshow/Portrait2.JPG"></img>
+      <img id="PortraitSS3" src="Slideshow/Portrait3.JPG"></img>
+      <img id="PortraitSS4" src="Slideshow/Portrait4.JPG"></img>
+      <img id="PortraitSS5" src="Slideshow/Portrait5.JPG"></img>
+      <img id="PortraitSS6" src="Slideshow/Portrait6.JPG"></img>
+      <img id="PortraitSS7" src="Slideshow/Portrait7.JPG"></img>
+      <img id="PortraitSS8" src="Slideshow/Portrait8.JPG"></img>
+      <img id="PortraitSS9" src="Slideshow/Portrait9.JPG"></img>
+      <img id="PortraitSS10" src="Slideshow/Portrait10.JPG"></img>
+      <img id="PortraitSS11" src="Slideshow/Portrait11.JPG"></img>
+      <img id="PortraitSS12" src="Slideshow/Portrait12.JPG"></img>
+      <img id="PortraitSS13" src="Slideshow/Portrait13.JPG"></img>
+      <img id="PortraitSS14" src="Slideshow/Portrait14.JPG"></img>
+
+      <img id="tekening" src="Pages/BenB-day.JPG"></img>
+      <img id="Boodskap" src="Pages/Boodskap.JPG"></img>
+      <img id="BenVer" src="Pages/BenVer.JPG"></img>
+      <img id="BenHor" src="Pages/BenHor.JPG"></img>
     </a-assets>
 
-    <a-marker id="CardMarker" type="barcode" value="1" markerhandler cursor="rayOrigin: mouse; fuse: false" emitevents="true">
+    <a-marker id="CardMarker" type="barcode" value="1" markerhandler cursor="rayOrigin: mouse; fuse: false" emitevents="true" >
 
-      <a-entity id="NextPlane" rotation="90 0 0" scale="0.8 0.6 0.05" position="-1 0 -1" geometry="primitive: plane; height: 1; width: 1" material="side: double; transparent: true; opacity:0">
-      </a-entity>
-      <a-box id="NextBtn" rotation="-90 0 0" scale="0.35 0.2 0.05" position="-0.5 0 -1" geometry="primitive: box; height: 1; width: 1; depth:1" material="color:rgb(120, 117, 117)">
-        <a-entity rotation="0 0 0" position="0 0 0.51"geometry="primitive: plane; height: 1; width: 1" material="side: double; src: models/back.png;transparent: false; color:rgb(120, 117, 117)"></a-entity>
-      </a-box>
+      <a-entity id="Buttons">
+        <a-entity id="NextPlane" rotation="90 0 0" scale="0.8 0.6 0.05" position="-1.3 0 -1" geometry="primitive: plane; height: 1; width: 2" material="side: double; transparent: true; opacity:0">
+        </a-entity>
+        <a-box rotation="-90 0 0" scale="0.35 0.2 0.05" position="-0.5 0 -1" geometry="primitive: box; height: 1; width: 1; depth:1" material="color:rgb(120, 117, 117)">
+          <a-entity id="NextBtn" rotation="0 0 0" position="0 0 0.51"geometry="primitive: plane; height: 1; width: 1" material="side: double; src: models/back.png;transparent: false; color:rgb(120, 117, 117)"></a-entity>
+        </a-box>
 
-      <a-entity id="BackPlane" rotation="90 0 0" scale="0.8 0.6 0.05" position="1 0 -1" geometry="primitive: plane; height: 1; width: 1" material="side: double; transparent: true; opacity:0">
-        <!--a-box id="NextBtn" scale="3 3 3" colour="rgb(185, 185, 185)"></a-box-->
-      </a-entity>
-      <a-entity id="BackBtn" rotation="-90 0 0" scale="0.35 0.2 0.05" position="0.5 0 -1" geometry="primitive: box; height: 1; width: 1; depth:1" material="color:rgb(120, 117, 117)">
-        <a-entity rotation="0 0 180" position="0 0 0.51"geometry="primitive: plane; height: 1; width: 1" material="side: double; src: models/back.png;transparent: false; color:rgb(120, 117, 117)"></a-entity>
+        <a-entity id="BackPlane" rotation="90 0 0" scale="0.8 0.6 0.05" position="1.3 0 -1" geometry="primitive: plane; height: 1; width: 2" material="side: double; transparent: true; opacity:0">
+          <!--a-box id="NextBtn" scale="3 3 3" colour="rgb(185, 185, 185)"></a-box-->
+        </a-entity>
+        <a-entity  rotation="-90 0 0" scale="0.35 0.2 0.05" position="0.5 0 -1" geometry="primitive: box; height: 1; width: 1; depth:1" material="color:rgb(120, 117, 117)">
+          <a-entity id="BackBtn" rotation="0 0 180" position="0 0 0.51"geometry="primitive: plane; height: 1; width: 1" material="side: double; src: models/back.png;transparent: false; color:rgb(120, 117, 117)"></a-entity>
+        </a-entity>
       </a-entity>
 
       <a-entity id="CardArea" rotation="-90 180 0" position="0.5 0 0" scale="0.35 0.35 0.35"
-      animation__Scooch="property: position;from: 0.5 0 0; to: 0 0 0; delay: 000; dir: alternate; startEvents: Scooch;"
-      animation__ScoochBack="property: position;from: 0.5 0 0; to: 0 0 0; delay: 000; dir: alternate; startEvents: ScoochBack;dir: reverse">
+      animation__Scooch="property: position;from: 0.5 0 0; to: 0 0 0;startEvents: Scooch;"
+      animation__ScoochBack="property: position;from: 0.5 0 0; to: 0 0 0; startEvents: ScoochBack;dir: reverse"
+      animation__LandscapeRot="property:rotation; from: -90 180 0; to: -130 180 90; startEvents:Landscape"
+      animation__LandscapePos="property:position; to: 0 -1 0; startEvents:Landscape"
+      animation__Portrait="property:rotation; from: -90 180 0; to: -130 180 90; startEvents:Portrait; dir:reverse"
+      animation__PortraitPos="property:position; to: 0 0 0; startEvents:Portrait">
 
-      <!Page1>
-        <a-entity id="Page" position="0 0 0.03" geometry="primitive: plane; height: 4; width: 6" material="side: double; transparent: true; opacity:0"
+      <!Page0>
+        <a-entity id="Page" position="0 0 0.033" geometry="primitive: plane; height: 4; width: 6" material="side: double; transparent: true; opacity:0"
         animation__Flip="property: rotation;from: 0 0 0; to: 0 -170 0; delay: 000; startEvents: Flip;"
         animation__FlipPos="property: position; to: 0 0 0; delay: 000; startEvents: Flip;"
         animation__FlipBack="property: rotation;from: 0 0 0; to: 0 -170 0; delay: 000; startEvents: FlipBack; dir: reverse;">
@@ -131,23 +224,54 @@
               <a-entity id="I_Am" gltf-model="#I_AmModel" shader="flat" scale="0.0255 0.03 0.0255" position="0 -1.05 0.05" rotation="90 0 0"></a-entity>
 
               <!Basiese boublokke van bladsy>
-                <a-entity id="Frontside" position="0 0 0.031" geometry="primitive: plane; height: 4; width: 3" material="color:rgb(73, 182, 244)"></a-entity>
+                <a-entity id="Frontside" position="0 0 0.035" geometry="primitive: plane; height: 4; width: 3" material="color:rgb(73, 182, 244)"></a-entity>
                 <a-box id="PageThickness" color="white" ; scale="3 4 0.03" rotation="0 0 0"> </a-box>
-                <a-entity id="Backside" rotation="0 180 0" position="0 0 -0.031" geometry="primitive: plane; height: 4; width: 2.67" material=" color:white; src:#tekening"></a-entity>
-          </a-entity>
+                <a-entity id="Backside" rotation="0 180 0" position="0 0 -0.0315" geometry="primitive: plane; height: 3.9; width: 2.9" material=" color:white; src:#tekening"></a-entity>
+                <a-entity id="Border" position="0 0 -0.031" rotation="0 180 0" geometry="primitive: plane; height: 4; width: 3" material="color:black"></a-entity>
+              </a-entity>
         </a-entity>
 
-        <!Page 2>
+        <!Page 1>
           <a-entity id="Page" position="0 0 0" geometry="primitive: plane; height: 4; width: 6" material="side: double; transparent: true; opacity: 0"
           animation__Flip="property: rotation;from: 0 0 0; to: 0 -169 0; delay: 000; startEvents: Flip;"
           animation__FlipPos="property: position; to: 0 0 0; delay: 000; startEvents: Flip;"
-          animation__FlipBack="property: rotation;from: 0 0 0; to: 0 -169 0; delay: 000; startEvents: FlipBack; dir: reverse;">>
+          animation__FlipBack="property: rotation;from: 0 0 0; to: 0 -169 0; delay: 000; startEvents: FlipBack; dir: reverse;">
             <a-entity position="1.5 0 0" rotation="0 0 0">
-              <a-entity id="Frontside" position="0 0 0.031" geometry="primitive: plane; height: 4; width: 3" material="color:white"></a-entity>
+              <a-entity id="Frontside" position="0 0 0.035" geometry="primitive: plane; height: 4; width: 3" material="src:#Boodskap"></a-entity>
               <a-box id="PageThickness" color="white" ; scale="3 4 0.03" rotation="0 0 0"> </a-box>
-              <a-entity id="Backside" rotation="0 180 0" position="0 0 -0.031" geometry="primitive: plane; height: 4; width: 3" material=" color:white;"></a-entity>
+              <a-entity id="Backside" rotation="0 180 0" position="0 0 -0.0315" geometry="primitive: plane; height: 3.9; width: 2.9" material=" color:white; src:#BenVer"></a-entity>
+              <a-entity id="Border" position="0 0 -0.031" rotation="0 180 0" geometry="primitive: plane; height: 4; width: 3" material="color:black"></a-entity>
             </a-entity>
           </a-entity>
+
+          <!Page 2>
+            <a-entity id="Page" position="0 0 0" geometry="primitive: plane; height: 4; width: 6" material="side: double; transparent: true; opacity: 0"
+            animation__Flip="property: rotation;from: 0 0 0; to: 0 -169 0; delay: 000; startEvents: Flip;"
+            animation__FlipPos="property: position; to: 0 0 0; delay: 000; startEvents: Flip;"
+            animation__FlipBack="property: rotation;from: 0 0 0; to: 0 -169 0; delay: 000; startEvents: FlipBack; dir: reverse;">
+              <a-entity position="1.5 0 0" rotation="0 0 0">
+                <a-entity id="PortraitSlideShow" position="0 0 0.0315" rotation="0 0 0" geometry="primitive: plane; width: 2.85; height: 3.85" material="src:#PortraitSS1"></a-entity>
+                <a-entity id="PortraitSlideShowBorder" position="0 0 0.031" rotation="0 0 0" geometry="primitive: plane; height: 4; width: 3" material="color:black"></a-entity>
+                <a-box id="PageThickness" color="white" ; scale="3 4 0.03" rotation="0 0 0"> </a-box>
+                <a-entity id="Backside" rotation="0 180 -90" position="0 0 -0.032" geometry="primitive: plane; height: 2.9; width: 3.9" material=" color:white; src:#BenHor"></a-entity>
+                <a-entity id="Border" position="0 0 -0.031" rotation="0 180 -90" geometry="primitive: plane; height: 3; width: 4" material="color:black"></a-entity>
+              </a-entity>
+            </a-entity>
+
+          <!Page 3>
+            <a-entity id="Page" position="0 0 0" geometry="primitive: plane; height: 4; width: 6" material="side: double; transparent: true; opacity: 0"
+            animation__Flip="property: rotation;from: 0 -60 0; to: 0 -169 0; delay: 000; startEvents: Flip;"
+            animation__FlipPos="property: position; to: 0 0 0; startEvents: Flip;"
+            animation__FlipBack="property: rotation;from: 0 -60 0; to: 0 -169 0; startEvents: FlipBack; dir: reverse;"
+            animation__Landscape="property:rotation; from: 0 0 0; to: 0 -60 0; startEvents: GoLandscape;"
+            animation__Portrait="property:rotation; from: 0 0 0; to: 0 -60 0; startEvents: GoPortrait; dir: reverse;">
+              <a-entity position="1.5 0 0" rotation="0 0 0">
+                <a-entity id="LandscapeSlideShow" position="0 0 0.0316" rotation="0 0 -90" geometry="primitive: plane; height: 2.85; width: 3.85" material="src:#LandscapeSS1"></a-entity>
+                <a-entity id="LandscapeSlideShowBorder" position="0 0 0.031" rotation="0 0 -90" geometry="primitive: plane; height: 3; width: 4" material="color:black"></a-entity>
+                <a-box id="PageThickness" color="white" ; scale="3 4 0.03" rotation="0 0 0"> </a-box>
+                <a-entity id="Backside" rotation="0 180 0" position="0 0 -0.031" geometry="primitive: plane; height: 4; width: 3" material=" color:white;"></a-entity>
+              </a-entity>
+            </a-entity>
 
       </a-entity>
     </a-marker>
