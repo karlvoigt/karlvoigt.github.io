@@ -1,74 +1,147 @@
-<!DOCTYPE html>
-
+<!doctype HTML>
 <html>
 
 <head>
-  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
-  <script>
-    //Loads multimarker file to localstorage otherwise the area preset will only look for hiro alone
-    var a = window.location.toString();
-    var file = a.substring(a.indexOf("?") + 1);
-    var xobj = new XMLHttpRequest();
-    xobj.overrideMimeType("application/json");
-    if (file == a) {
-      xobj.open('GET', 'ARjsMultiMarkerFile', true); //
-    } else {
-      xobj.open('GET', file, true); //
-    }
-    xobj.onreadystatechange = function() {
-      if (xobj.readyState == 4 && xobj.status == "200") {
-        localStorage.setItem('ARjsMultiMarkerFile', xobj.responseText);
-      }
-    };
-    xobj.send();
-  </script>
-
-  <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
-  <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
-  <script src="https://rvdleun.github.io/aframe-arcube/dist/aframe-arcube.min.js"></script>
+  <script src="../vendor/aframe.min.js"></script>
+  <script src="../vendor/aframe-ar.js"> </script>
   <script>
     THREEx.ArToolkitContext.baseURL = 'https://rawgit.com/jeromeetienne/ar.js/master/three.js/'
   </script>
 </head>
 
 <body style="margin : 0px; overflow: hidden">
-  <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
-  <a-scene embedded vr-mode-ui="enabled: false" arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
+  <script>
+    AFRAME.registerComponent('markerhandler', {
 
+      init: function() {
+        var PageCnt = 1;
+        var OralStarted = false;
+        var BtnVisible= false;
+        var GoBack=false;
+        const Earth = document.querySelector('#Earth');
+        const OverPop = document.querySelector('#Overpopulation');
+        const OverPopMyth = document.querySelector('#OverpopMyth');
+        const PageMarker = document.querySelector("#PageMarker");
+        const BtnMarker = document.querySelector("#BtnMarker");
+        const PageTxt = document.querySelector("#PageTxt");
+        const SlideImg = document.querySelector("#SlideImg");
+        const TheScene = document.querySelector("a-scene");
+
+        if (window.innerHeight == window.innerWidth) {
+          console.log("Portrait");
+          TheScene.setAttribute("arjs", "debugUIEnabled: false; sourceType: webcam; sourceWidth:1920; sourceHeight:1440; displayWidth: 1920; displayHeight: 1440;detectionMode: mono_and_matrix; matrixCodeType: 3x3;")
+        }
+
+      BtnMarker.addEventListener("markerLost", (e) => {
+        BtnVisible=false;
+        setTimeout(function() {
+          if (!BtnVisible) {
+            PageCnt=1;
+            SlideImg.setAttribute("src", "#Slide1")
+            SlideImg.setAttribute("scale", "0 0 0")
+            Earth.setAttribute("src", "#earth")
+            OverPop.setAttribute("scale", "0 0 0")
+            OverPopMyth.setAttribute("scale", "0 0 0")
+            OralStarted=false;
+            GoBack=false;
+          }
+        },10000)
+        setTimeout(function() {
+          if (!BtnVisible) {
+            GoBack=true;
+            console.log("Magic wand waved backwards");
+            PageCnt -= 1;
+            console.log("Page " + PageCnt);
+            SlideImg.setAttribute("src", "#Slide"+PageCnt)
+          }
+        },2000)
+      })
+
+      BtnMarker.addEventListener("markerFound", (e) => {
+        BtnVisible=true;
+        if (OralStarted) {
+          console.log("Magic wand waved");
+          if (GoBack) {
+            GoBack=false;
+          } else {
+            PageCnt += 1;
+            console.log("Page " + PageCnt);
+            SlideImg.setAttribute("src", "#Slide"+PageCnt)
+          }
+        } else {
+          console.log("Starting Oral")
+          OralStarted = true;
+
+          setTimeout(function() {
+            Earth.setAttribute("src", "#dead_earth")
+          }, 1500)
+
+          setTimeout(function() {
+            OverPop.setAttribute("scale", "0.02 0.02 0.02")
+          }, 3200)
+
+          setTimeout(function() {
+            OverPopMyth.emit("Grow")
+            SlideImg.emit("Grow")
+          }, 5500)
+
+          OverPop.setAttribute("position", TitleMarker.getAttribute("position"))
+          OverPop.object3D.position.y += -1.6;
+          OverPopMyth.setAttribute("position", OverPop.getAttribute("position"))
+          OverPopMyth.object3D.position.x += 0.24;
+        }
+      })
+    }
+    });
+  </script>
+  <a-scene embedded arjs='debugUIEnabled: false; sourceType: webcam; sourceWidth:960; sourceHeight:720; displayWidth: 960; displayHeight: 720;detectionMode: mono_and_matrix; matrixCodeType: 3x3;' vr-mode-ui="enabled: false">
     <a-assets>
-      <a-asset-item id="roses" src="models/model.gltf"></a-asset-item>
-      <a-asset-item id="somerbal" gltf-model="https://cdn.glitch.com/ded13030-6d6a-4894-9011-7b2a02896326%2FSomerbal-Ook%3F.glb?v=1581262115017" scale="0.1 0.1 0.1"><a-asset-item>
-      <a-asset-item id="text" gltf-model="https://cdn.glitch.com/ded13030-6d6a-4894-9011-7b2a02896326%2FMx-afskeid.glb?v=1580540907619" scale="0.1 0.1 0.1"></a-asset-item>
+      <img id="earth" src="detailed_earth.jpg" />
+      <img id="moon" src="moon.jpg" />
+      <img id="dead_earth" src="dead_earth.jpg" />
+      <img id="Slide1" src="Slides/1.png" />
+      <img id="Slide2" src="Slides/2.png" />
+      <img id="Slide3" src="Slides/3.png" />
+      <img id="Slide4" src="Slides/4.png" />
+      <img id="Slide5" src="Slides/5.png" />
+      <img id="Slide6" src="Slides/6.png" />
+      <img id="Slide7" src="Slides/7.png" />
+      <img id="Slide8" src="Slides/8.png" />
+      <img id="Slide9" src="Slides/9.png" />
+      <img id="Slide10" src="Slides/10.png" />
+      <a-asset-item id="OverpopulationMyth" gltf-model="Resources/OverpopulationMyth.glb"></a-asset-item>
     </a-assets>
 
-    <a-marker type="pattern" preset="custom" url="https://raw.githubusercontent.com/karlvoigt/karlvoigt.github.io/master/markers/pattern-RoosMarker.patt">
-      <a-entity id="roses" gltf-model="#roses" scale="1.5 1.5 1.5" rotation='0 0 0' position='0 1 0'>
-      </a-entity>
-      <a-entity gltf-model="models/Somerbal-Ook.glb"
-        scale="0.02 0.02 0.02"
-        position='0 0.5 0.5'
-        rotation='-40 0 0'>
+
+    <a-marker id="PageMarker" type="barcode" value="3">
+      <a-image id="SlideImg" position="0 0 -1.3" width="4" height="3" scale="0 0 0" rotation="-65 79 -78" src="#Slide1"
+        animation="property: scale; from: 0 0 0; to: 2 2 2; dur: 2000; delay: 0;startEvents:Grow;"
+      ></a-image>
+    </a-marker>
+
+    <a-marker id="BtnMarker" type="barcode" value="0"></a-marker>
+
+    <a-marker id="Globe" type="barcode" value="1">
+      <a-entity animation="property: rotation; from: 90 0 0; to: 90 360 0; loop: true; dur: 10000" markerhandler emitevents="true">
+        <a-sphere id="Earth" src=#earth position="0 0 0">
+        </a-sphere>
       </a-entity>
     </a-marker>
 
-    <a-marker type="area">
-      <a-entity id="roses" gltf-model="#roses"
-        scale="1 1 1"
-        position="0 0 -0.5"
-        rotation="-60 1 20">
-      </a-entity>
-
-      <a-entity gltf-model="models/Mx-afskeid.glb"
-        scale="0.02 0.02 0.02"
-        position='0 0.5 0.5'
-        rotation='-90 0 0'>
-      </a-entity>
+    <a-marker id="TitleMarker" type="barcode" value="5">
     </a-marker>
 
-    <a-arcube timeout="0">
+    <a-entity id="Overpopulation" gltf-model="Resources/Overpopulation.glb" scale="0 0 0" position='-1 1 -10' rotation="0 0 0">
+    </a-entity>
 
-      <a-box scale="1.1 1.1 1.1"> </a-box>
+    <a-entity id="OverpopMyth" gltf-model="Resources/OverpopulationMyth.glb" scale="0 0 0" position="-1.3 1 -10" rotation="0 0 0"
+    animation="property: scale; from: 0 0 0; to: 0.02 0.02 0.02; dur: 2000; delay: 0; startEvents:Grow;">
+    </a-entity>
+
+
+    <a-arcube>
     </a-arcube>
+
 
     <a-entity camera></a-entity>
   </a-scene>
