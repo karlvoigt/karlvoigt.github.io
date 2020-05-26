@@ -54,7 +54,7 @@
 
         setInterval(function(){
           if (CurPage==3) {
-            if (LSScnt<16) {
+            if (LSScnt<17) {
               LSScnt+=1;
             } else {
               LSScnt=1;
@@ -65,7 +65,7 @@
 
       setInterval(function(){
         if (CurPage==2) {
-          if (PSScnt<14) {
+          if (PSScnt<15) {
             PSScnt+=1;
           } else {
             PSScnt=1;
@@ -149,46 +149,51 @@
     arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
 
     <a-assets>
-      <a-asset-item id="Vader" src="models/Vader.gltf"></a-asset-item>
-      <a-asset-item id="BirthdayModel" src="models/BIRTHDAYCARD.glb"></a-asset-item>
-      <a-asset-item id="I_AmModel" src="models/I_AM.glb"></a-asset-item>
+      <a-asset-item id="Pangolin" src="models/Pangolin.glb"></a-asset-item>
+      <a-asset-item id="Happy" src="models/Happy.glb"></a-asset-item>
+      <a-asset-item id="Birthday" src="models/Birthday.glb"></a-asset-item>
+      <a-asset-item id="From" src="models/FromBob.glb"></a-asset-item>
+      <a-asset-item id="The" src="models/ThePangolin.glb"></a-asset-item>
 
-      <img id="LandscapeSS1" src="Slideshow/Landscape1.JPG"></img>
-      <img id="LandscapeSS2" src="Slideshow/Landscape2.JPG"></img>
-      <img id="LandscapeSS3" src="Slideshow/Landscape3.JPG"></img>
-      <img id="LandscapeSS4" src="Slideshow/Landscape4.JPG"></img>
-      <img id="LandscapeSS5" src="Slideshow/Landscape5.JPG"></img>
-      <img id="LandscapeSS6" src="Slideshow/Landscape6.JPG"></img>
-      <img id="LandscapeSS7" src="Slideshow/Landscape7.JPG"></img>
-      <img id="LandscapeSS8" src="Slideshow/Landscape8.JPG"></img>
-      <img id="LandscapeSS9" src="Slideshow/Landscape9.JPG"></img>
-      <img id="LandscapeSS10" src="Slideshow/Landscape10.JPG"></img>
-      <img id="LandscapeSS11" src="Slideshow/Landscape11.JPG"></img>
-      <img id="LandscapeSS12" src="Slideshow/Landscape12.JPG"></img>
-      <img id="LandscapeSS13" src="Slideshow/Landscape13.JPG"></img>
-      <img id="LandscapeSS14" src="Slideshow/Landscape14.JPG"></img>
-      <img id="LandscapeSS15" src="Slideshow/Landscape15.JPG"></img>
-      <img id="LandscapeSS16" src="Slideshow/Landscape16.JPG"></img>
+      <img id="LandscapeSS1" src="Slideshow/Landscape/Landscape1.JPG"></img>
+      <img id="LandscapeSS2" src="Slideshow/Landscape/Landscape2.JPG"></img>
+      <img id="LandscapeSS3" src="Slideshow/Landscape/Landscape3.JPG"></img>
+      <img id="LandscapeSS4" src="Slideshow/Landscape/Landscape4.JPG"></img>
+      <img id="LandscapeSS5" src="Slideshow/Landscape/Landscape5.JPG"></img>
+      <img id="LandscapeSS6" src="Slideshow/Landscape/Landscape6.JPG"></img>
+      <img id="LandscapeSS7" src="Slideshow/Landscape/Landscape7.JPG"></img>
+      <img id="LandscapeSS8" src="Slideshow/Landscape/Landscape8.JPG"></img>
+      <img id="LandscapeSS9" src="Slideshow/Landscape/Landscape9.JPG"></img>
+      <img id="LandscapeSS10" src="Slideshow/Landscape/Landscape10.JPG"></img>
+      <img id="LandscapeSS11" src="Slideshow/Landscape/Landscape11.JPG"></img>
+      <img id="LandscapeSS12" src="Slideshow/Landscape/Landscape12.JPG"></img>
+      <img id="LandscapeSS13" src="Slideshow/Landscape/Landscape13.JPG"></img>
+      <img id="LandscapeSS14" src="Slideshow/Landscape/Landscape14.JPG"></img>
+      <img id="LandscapeSS15" src="Slideshow/Landscape/Landscape15.JPG"></img>
+      <img id="LandscapeSS16" src="Slideshow/Landscape/Landscape16.JPG"></img>
+      <img id="LandscapeSS17" src="Slideshow/Landscape/Landscape17.JPG"></img>
 
-      <img id="PortraitSS1" src="Slideshow/Portrait1.JPG"></img>
-      <img id="PortraitSS2" src="Slideshow/Portrait2.JPG"></img>
-      <img id="PortraitSS3" src="Slideshow/Portrait3.JPG"></img>
-      <img id="PortraitSS4" src="Slideshow/Portrait4.JPG"></img>
-      <img id="PortraitSS5" src="Slideshow/Portrait5.JPG"></img>
-      <img id="PortraitSS6" src="Slideshow/Portrait6.JPG"></img>
-      <img id="PortraitSS7" src="Slideshow/Portrait7.JPG"></img>
-      <img id="PortraitSS8" src="Slideshow/Portrait8.JPG"></img>
-      <img id="PortraitSS9" src="Slideshow/Portrait9.JPG"></img>
-      <img id="PortraitSS10" src="Slideshow/Portrait10.JPG"></img>
-      <img id="PortraitSS11" src="Slideshow/Portrait11.JPG"></img>
-      <img id="PortraitSS12" src="Slideshow/Portrait12.JPG"></img>
-      <img id="PortraitSS13" src="Slideshow/Portrait13.JPG"></img>
-      <img id="PortraitSS14" src="Slideshow/Portrait14.JPG"></img>
+      <img id="PortraitSS1" src="Slideshow/Portrait/Portrait1.JPG"></img>
+      <img id="PortraitSS2" src="Slideshow/Portrait/Portrait2.JPG"></img>
+      <img id="PortraitSS3" src="Slideshow/Portrait/Portrait3.JPG"></img>
+      <img id="PortraitSS4" src="Slideshow/Portrait/Portrait4.JPG"></img>
+      <img id="PortraitSS5" src="Slideshow/Portrait/Portrait5.JPG"></img>
+      <img id="PortraitSS6" src="Slideshow/Portrait/Portrait6.JPG"></img>
+      <img id="PortraitSS7" src="Slideshow/Portrait/Portrait7.JPG"></img>
+      <img id="PortraitSS8" src="Slideshow/Portrait/Portrait8.JPG"></img>
+      <img id="PortraitSS9" src="Slideshow/Portrait/Portrait9.JPG"></img>
+      <img id="PortraitSS10" src="Slideshow/Portrait/Portrait10.JPG"></img>
+      <img id="PortraitSS11" src="Slideshow/Portrait/Portrait11.JPG"></img>
+      <img id="PortraitSS12" src="Slideshow/Portrait/Portrait12.JPG"></img>
+      <img id="PortraitSS13" src="Slideshow/Portrait/Portrait13.JPG"></img>
+      <img id="PortraitSS14" src="Slideshow/Portrait/Portrait14.JPG"></img>
+      <img id="PortraitSS15" src="Slideshow/Portrait/Portrait15.JPG"></img>
 
-      <img id="tekening" src="Pages/BenB-day.JPG"></img>
+      <img id="tekening" src="Pages/Tekening.JPG"></img>
       <img id="Boodskap" src="Pages/Boodskap.JPG"></img>
-      <img id="BenVer" src="Pages/BenVer.JPG"></img>
-      <img id="BenHor" src="Pages/BenHor.JPG"></img>
+      <img id="VerArt" src="Pages/JodelsVer.JPG"></img>
+      <img id="HorArt" src="Pages/JodelsHor.JPG"></img>
+
     </a-assets>
 
     <a-marker id="CardMarker" type="barcode" value="1" markerhandler cursor="rayOrigin: mouse; fuse: false" emitevents="true" >
@@ -223,9 +228,11 @@
         animation__FlipBack="property: rotation;from: 0 0 0; to: 0 -170 0; delay: 000; startEvents: FlipBack; dir: reverse;">
           <a-entity position="1.5 0 0" rotation="0 0 0">
             <!Content op die voorkant>
-              <a-entity id="Vader" gltf-model="#Vader" shader="flat" scale="0.27 0.27 0.27" position="0 0.45 0.1" rotation="90 0 0"></a-entity>
-              <a-entity id="Birthday" gltf-model="#BirthdayModel" shader="flat" scale="0.0255 0.03 0.0255" position="0 -1.65 0.05" rotation="90 0 0"></a-entity>
-              <a-entity id="I_Am" gltf-model="#I_AmModel" shader="flat" scale="0.0255 0.03 0.0255" position="0 -1.05 0.05" rotation="90 0 0"></a-entity>
+              <a-entity id="Happy" gltf-model="#Happy" shader="flat" scale="0.008 0.02 0.007" position="0 1.7 0.05" rotation="90 0 0"></a-entity>
+              <a-entity id="Birthday" gltf-model="#Birthday" shader="flat" scale="0.008 0.02 0.007" position="0 1.1 0.05" rotation="90 0 0"></a-entity>
+              <a-entity id="Pangolin" gltf-model="#Pangolin" shader="flat" scale="0.35 0.35 0.35" position="-0.4 0.25 0.1" rotation="90 0 180"></a-entity>
+              <a-entity id="From" gltf-model="#From" shader="flat" scale="0.008 0.02 0.007" position="0 -0.7 0.05" rotation="90 0 0"></a-entity>
+              <a-entity id="The" gltf-model="#The" shader="flat" scale="0.008 0.02 0.007" position="0 -1.35 0.05" rotation="90 0 0"></a-entity>
 
               <!Basiese boublokke van bladsy>
                 <a-entity id="Frontside" position="0 0 0.035" geometry="primitive: plane; height: 4; width: 3" material="color:rgb(73, 182, 244)"></a-entity>
@@ -243,7 +250,7 @@
             <a-entity position="1.5 0 0" rotation="0 0 0">
               <a-entity id="Frontside" position="0 0 0.037" geometry="primitive: plane; height: 4; width: 3" material="src:#Boodskap"></a-entity>
               <a-box id="PageThickness" color="white" ; scale="3 4 0.03" rotation="0 0 0"> </a-box>
-              <a-entity id="Backside" rotation="0 180 0" position="0 0 -0.0315" geometry="primitive: plane; height: 3.9; width: 2.9" material=" color:white; src:#BenVer"></a-entity>
+              <a-entity id="Backside" rotation="0 180 0" position="0 0 -0.0315" geometry="primitive: plane; height: 3.9; width: 2.9" material=" color:white; src:#VerArt"></a-entity>
               <a-entity id="Border" position="0 0 -0.031" rotation="0 180 0" geometry="primitive: plane; height: 4; width: 3" material="color:black"></a-entity>
             </a-entity>
           </a-entity>
@@ -257,7 +264,7 @@
                 <a-entity id="PortraitSlideShow" position="0 0 0.05" rotation="0 0 0" geometry="primitive: plane; width: 2.85; height: 3.85" material="src:#PortraitSS1"></a-entity>
                 <a-entity id="PortraitSlideShowBorder" position="0 0 0.031" rotation="0 0 0" geometry="primitive: plane; height: 4; width: 3" material="color:black"></a-entity>
                 <a-box id="PageThickness" color="white" position="0 0 0.02" scale="3 4 0.02" rotation="0 0 0"> </a-box>
-                <a-entity id="Backside" rotation="0 180 -90" position="0 0 -0.04" geometry="primitive: plane; height: 2.9; width: 3.9" material=" color:white; src:#BenHor"></a-entity>
+                <a-entity id="Backside" rotation="0 180 -90" position="0 0 -0.04" geometry="primitive: plane; height: 2.9; width: 3.9" material=" color:white; src:#HorArt"></a-entity>
                 <a-entity id="Border" position="0 0 -0.031" rotation="0 180 -90" geometry="primitive: plane; height: 3; width: 4" material="color:black"></a-entity>
               </a-entity>
             </a-entity>
