@@ -2,8 +2,13 @@
 	"meta": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		"createdBy": "Area Learning - AR.js 1.7.2",
 		"createdAt": "2020-02-08T11:54:28.003Z"
+=======
+		"createdBy": "Area Learning - AR.js 2.1.8",
+		"createdAt": "2020-02-06T19:36:11.366Z"
+>>>>>>> parent of 47991aa... update all support files
 =======
 		"createdBy": "Area Learning - AR.js 2.1.8",
 		"createdAt": "2020-02-06T19:36:11.366Z"
@@ -20,7 +25,11 @@
 				"type": "pattern",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 				"patternUrl": "https://cdn.glitch.com/8eec326c-c39f-4b72-95df-b6e8a8bec1f6%2Fpattern-marker-r.patt?v=1581162448332\n                                   "
+=======
+				"patternUrl": "https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/pattern-files/pattern-hiro.patt"
+>>>>>>> parent of 47991aa... update all support files
 =======
 				"patternUrl": "https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/pattern-files/pattern-hiro.patt"
 >>>>>>> parent of 47991aa... update all support files
@@ -45,6 +54,7 @@
 				-0.18554411264940354,
 				-0.047538251449239066,
 				0.9999999999999999
+<<<<<<< HEAD
 <<<<<<< HEAD
 			]
 		},
@@ -145,11 +155,14 @@
 				1
 =======
 >>>>>>> parent of 47991aa... update all support files
+=======
+>>>>>>> parent of 47991aa... update all support files
 			]
 		},
 		{
 			"parameters": {
 				"type": "pattern",
+<<<<<<< HEAD
 <<<<<<< HEAD
 				"patternUrl": "https://cdn.glitch.com/8eec326c-c39f-4b72-95df-b6e8a8bec1f6%2Fpattern-marker-e.patt?v=1581162448688"
 			},
@@ -172,6 +185,8 @@
 =======
 =======
 >>>>>>> parent of 47991aa... update all support files
+=======
+>>>>>>> parent of 47991aa... update all support files
 				"patternUrl": "https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/pattern-files/pattern-kanji.patt"
 			},
 			"poseMatrix": [
@@ -191,6 +206,9 @@
 				-0.319297194650713,
 				-1.1709097934889146,
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 47991aa... update all support files
+=======
 >>>>>>> parent of 47991aa... update all support files
 =======
 >>>>>>> parent of 47991aa... update all support files
