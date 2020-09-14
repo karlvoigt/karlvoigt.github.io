@@ -1,217 +1,55 @@
 {
-	"meta": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-		"createdBy": "Area Learning - AR.js 1.7.2",
-		"createdAt": "2020-02-08T11:54:28.003Z"
-=======
-		"createdBy": "Area Learning - AR.js 2.1.8",
-		"createdAt": "2020-02-06T19:36:11.366Z"
->>>>>>> parent of 47991aa... update all support files
-=======
-		"createdBy": "Area Learning - AR.js 2.1.8",
-		"createdAt": "2020-02-06T19:36:11.366Z"
->>>>>>> parent of 47991aa... update all support files
-=======
-		"createdBy": "Area Learning - AR.js 2.1.8",
-		"createdAt": "2020-02-06T19:36:11.366Z"
->>>>>>> parent of 47991aa... update all support files
+	\"meta\": {
+		\"createdBy\": \"Area Learning - AR.js 2.1.8\",
+		\"createdAt\": \"2020-02-04T18:26:37.889Z\"
 	},
-	"trackingBackend": "artoolkit",
-	"subMarkersControls": [
+	\"trackingBackend\": \"artoolkit\",
+	\"subMarkersControls\": [
 		{
-			"parameters": {
-				"type": "pattern",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-				"patternUrl": "https://cdn.glitch.com/8eec326c-c39f-4b72-95df-b6e8a8bec1f6%2Fpattern-marker-r.patt?v=1581162448332\n                                   "
-=======
-				"patternUrl": "https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/pattern-files/pattern-hiro.patt"
->>>>>>> parent of 47991aa... update all support files
-=======
-				"patternUrl": "https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/pattern-files/pattern-hiro.patt"
->>>>>>> parent of 47991aa... update all support files
-=======
-				"patternUrl": "https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/pattern-files/pattern-hiro.patt"
->>>>>>> parent of 47991aa... update all support files
+			\"parameters\": {
+				\"type\": \"pattern\",
+				\"patternUrl\": \"https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/pattern-files/pattern-hiro.patt\"
 			},
-			"poseMatrix": [
-				0.9976584147558786,
-				-0.06429697962623092,
-				-0.023327046131568812,
+			\"poseMatrix\": [
+				1,
 				0,
-				0.06571778610703591,
-				0.995629564642189,
-				0.06635718272821776,
 				0,
-				0.01895852953967927,
-				-0.06773476753348218,
-				0.9975233601090835,
 				0,
-				0.0831799147672167,
-				-0.18554411264940354,
-				-0.047538251449239066,
-				0.9999999999999999
-<<<<<<< HEAD
-<<<<<<< HEAD
-			]
-		},
-		{
-			"parameters": {
-				"type": "pattern",
-<<<<<<< HEAD
-				"patternUrl": " https://cdn.glitch.com/8eec326c-c39f-4b72-95df-b6e8a8bec1f6%2Fpattern-marker-a.patt?v=1581162448705\n                                   "
-			},
-			"poseMatrix": [
-				-0.015351498582536666,
-				-0.03572858159108214,
-				-0.9992435938586014,
 				0,
-				0.9963245014920072,
-				0.08368129193729457,
-				-0.018298730026833635,
+				1,
 				0,
-				0.08427178253413115,
-				-0.9958518286864746,
-				0.034312629568755075,
 				0,
-				0.8130840723914531,
-				-0.593034927509392,
-				-0.01234273806028534,
-				1.0000000000000002
-			]
-		},
-		{
-			"parameters": {
-				"type": "pattern",
-				"patternUrl": " https://cdn.glitch.com/8eec326c-c39f-4b72-95df-b6e8a8bec1f6%2Fpattern-marker-c.patt?v=1581162448349\n                                   "
-			},
-			"poseMatrix": [
-				0.08305804115270797,
-				0.9964126206696566,
-				-0.016209450079924692,
 				0,
-				-0.061646529118335805,
-				0.021371812450340064,
-				0.997869144713806,
 				0,
-				0.9946359041709324,
-				-0.0818818039946378,
-				0.06320050717400363,
+				1,
 				0,
-				-0.1922815316217622,
-				-0.8112061070400102,
-				0.7860544619083838,
-				1.0000000000000004
-			]
-		},
-		{
-			"parameters": {
-				"type": "pattern",
-				"patternUrl": "https://cdn.glitch.com/8eec326c-c39f-4b72-95df-b6e8a8bec1f6%2Fpattern-marker-b.patt?v=1581162448364\n                                   "
-			},
-			"poseMatrix": [
-				-0.022449667415998055,
-				0.9996475797453109,
-				0.014164704972907808,
 				0,
-				0.08577464147900633,
-				0.01604193535499425,
-				-0.996185484823481,
 				0,
-				-0.9960616758729485,
-				-0.021149056351329732,
-				-0.08610455343915238,
 				0,
-				0.13899162389061126,
-				-0.7390509249619599,
-				-0.8548228397552049,
-				1.0000000000000009
-			]
-		},
-		{
-			"parameters": {
-				"type": "pattern",
-				"patternUrl": "https://cdn.glitch.com/8eec326c-c39f-4b72-95df-b6e8a8bec1f6%2Fpattern-marker-u.patt?v=1581162448417\n                                   "
-			},
-			"poseMatrix": [
-				-0.005559505475776261,
-				0.9999819486804389,
-				-0.0022638000575708425,
-				0,
-				-0.9990181985699877,
-				-0.005454624092623387,
-				0.043962445062667464,
-				0,
-				0.04394930180154241,
-				0.0025059871252263344,
-				0.9990305934935483,
-				0,
-				-0.8944991851372669,
-				-0.6741022871530549,
-				0.1685724886120211,
 				1
-=======
->>>>>>> parent of 47991aa... update all support files
-=======
->>>>>>> parent of 47991aa... update all support files
 			]
 		},
 		{
-			"parameters": {
-				"type": "pattern",
-<<<<<<< HEAD
-<<<<<<< HEAD
-				"patternUrl": "https://cdn.glitch.com/8eec326c-c39f-4b72-95df-b6e8a8bec1f6%2Fpattern-marker-e.patt?v=1581162448688"
+			\"parameters\": {
+				\"type\": \"pattern\",
+				\"patternUrl\": \"https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/pattern-files/pattern-kanji.patt\"
 			},
-			"poseMatrix": [
-				-0.9989155921422089,
-				-0.04603885285576302,
-				0.006933725490016094,
+			\"poseMatrix\": [
+				0.9965641470059897,
+				0.08249872264035163,
+				0.007332927016291251,
 				0,
-				0.009453944707207307,
-				-0.05475110032361382,
-				0.9984552927420418,
+				-0.08280847657999749,
+				0.9941774603986091,
+				0.06894889919559483,
 				0,
-				-0.04558810775899941,
-				0.9974380671210901,
-				0.055126978287329605,
+				-0.0016020344263021871,
+				-0.06931922734655681,
+				0.9975933266811002,
 				0,
-				-0.24752253192515114,
-				-0.6717636837461938,
-				0.9276377105119101,
-=======
-=======
->>>>>>> parent of 47991aa... update all support files
-=======
->>>>>>> parent of 47991aa... update all support files
-				"patternUrl": "https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/pattern-files/pattern-kanji.patt"
-			},
-			"poseMatrix": [
-				0.9999565549787179,
-				-0.008767564982164485,
-				0.003127601302755127,
-				0,
-				0.009076081019949944,
-				0.9929329772599692,
-				-0.11832769366040817,
-				0,
-				-0.0020680531622284965,
-				0.1183509584495448,
-				0.9929694879175428,
-				0,
-				-0.3916497729256849,
-				-0.319297194650713,
-				-1.1709097934889146,
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 47991aa... update all support files
-=======
->>>>>>> parent of 47991aa... update all support files
-=======
->>>>>>> parent of 47991aa... update all support files
+				-0.41827611456573144,
+				-0.5168420923068375,
+				-1.2237442305909454,
 				1
 			]
 		}
