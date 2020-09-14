@@ -1,37 +1,47 @@
 {
 	"meta": {
+<<<<<<< HEAD
 		"createdBy": "Area Learning - AR.js 1.7.2",
 		"createdAt": "2020-02-08T11:54:28.003Z"
+=======
+		"createdBy": "Area Learning - AR.js 2.1.8",
+		"createdAt": "2020-02-06T19:36:11.366Z"
+>>>>>>> parent of 47991aa... update all support files
 	},
 	"trackingBackend": "artoolkit",
 	"subMarkersControls": [
 		{
 			"parameters": {
 				"type": "pattern",
+<<<<<<< HEAD
 				"patternUrl": "https://cdn.glitch.com/8eec326c-c39f-4b72-95df-b6e8a8bec1f6%2Fpattern-marker-r.patt?v=1581162448332\n                                   "
+=======
+				"patternUrl": "https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/pattern-files/pattern-hiro.patt"
+>>>>>>> parent of 47991aa... update all support files
 			},
 			"poseMatrix": [
-				1,
+				0.9976584147558786,
+				-0.06429697962623092,
+				-0.023327046131568812,
 				0,
+				0.06571778610703591,
+				0.995629564642189,
+				0.06635718272821776,
 				0,
+				0.01895852953967927,
+				-0.06773476753348218,
+				0.9975233601090835,
 				0,
-				0,
-				1,
-				0,
-				0,
-				0,
-				0,
-				1,
-				0,
-				0,
-				0,
-				0,
-				1
+				0.0831799147672167,
+				-0.18554411264940354,
+				-0.047538251449239066,
+				0.9999999999999999
 			]
 		},
 		{
 			"parameters": {
 				"type": "pattern",
+<<<<<<< HEAD
 				"patternUrl": " https://cdn.glitch.com/8eec326c-c39f-4b72-95df-b6e8a8bec1f6%2Fpattern-marker-a.patt?v=1581162448705\n                                   "
 			},
 			"poseMatrix": [
@@ -146,6 +156,26 @@
 				-0.24752253192515114,
 				-0.6717636837461938,
 				0.9276377105119101,
+=======
+				"patternUrl": "https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/pattern-files/pattern-kanji.patt"
+			},
+			"poseMatrix": [
+				0.9999565549787179,
+				-0.008767564982164485,
+				0.003127601302755127,
+				0,
+				0.009076081019949944,
+				0.9929329772599692,
+				-0.11832769366040817,
+				0,
+				-0.0020680531622284965,
+				0.1183509584495448,
+				0.9929694879175428,
+				0,
+				-0.3916497729256849,
+				-0.319297194650713,
+				-1.1709097934889146,
+>>>>>>> parent of 47991aa... update all support files
 				1
 			]
 		}
